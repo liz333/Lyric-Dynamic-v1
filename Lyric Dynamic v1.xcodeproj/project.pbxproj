@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		639E0EC120AA2E1E003F9397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E0EC020AA2E1E003F9397 /* AppDelegate.swift */; };
-		639E0EC320AA2E1E003F9397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E0EC220AA2E1E003F9397 /* ViewController.swift */; };
+		639E0EC320AA2E1E003F9397 /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E0EC220AA2E1E003F9397 /* SongListViewController.swift */; };
 		639E0EC620AA2E1E003F9397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639E0EC420AA2E1E003F9397 /* Main.storyboard */; };
 		639E0EC920AA2E1E003F9397 /* Lyric_Dynamic_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 639E0EC720AA2E1E003F9397 /* Lyric_Dynamic_v1.xcdatamodeld */; };
 		639E0ECB20AA2E1F003F9397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639E0ECA20AA2E1F003F9397 /* Assets.xcassets */; };
 		639E0ECE20AA2E1F003F9397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639E0ECC20AA2E1F003F9397 /* LaunchScreen.storyboard */; };
+		63D000C320AA37B400FDCFC4 /* AddSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D000C220AA37B400FDCFC4 /* AddSongViewController.swift */; };
+		63D000C720AA476700FDCFC4 /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D000C620AA476700FDCFC4 /* SongViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		639E0EBD20AA2E1E003F9397 /* Lyric Dynamic v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lyric Dynamic v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		639E0EC020AA2E1E003F9397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		639E0EC220AA2E1E003F9397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		639E0EC220AA2E1E003F9397 /* SongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
 		639E0EC520AA2E1E003F9397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		639E0EC820AA2E1E003F9397 /* Lyric_Dynamic_v1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lyric_Dynamic_v1.xcdatamodel; sourceTree = "<group>"; };
 		639E0ECA20AA2E1F003F9397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		639E0ECD20AA2E1F003F9397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		639E0ECF20AA2E1F003F9397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63D000C220AA37B400FDCFC4 /* AddSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSongViewController.swift; sourceTree = "<group>"; };
+		63D000C620AA476700FDCFC4 /* SongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				639E0EC020AA2E1E003F9397 /* AppDelegate.swift */,
-				639E0EC220AA2E1E003F9397 /* ViewController.swift */,
+				639E0EC220AA2E1E003F9397 /* SongListViewController.swift */,
+				63D000C220AA37B400FDCFC4 /* AddSongViewController.swift */,
+				63D000C620AA476700FDCFC4 /* SongViewController.swift */,
 				639E0EC420AA2E1E003F9397 /* Main.storyboard */,
 				639E0ECA20AA2E1F003F9397 /* Assets.xcassets */,
 				639E0ECC20AA2E1F003F9397 /* LaunchScreen.storyboard */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				639E0EC320AA2E1E003F9397 /* ViewController.swift in Sources */,
+				639E0EC320AA2E1E003F9397 /* SongListViewController.swift in Sources */,
+				63D000C320AA37B400FDCFC4 /* AddSongViewController.swift in Sources */,
+				63D000C720AA476700FDCFC4 /* SongViewController.swift in Sources */,
 				639E0EC120AA2E1E003F9397 /* AppDelegate.swift in Sources */,
 				639E0EC920AA2E1E003F9397 /* Lyric_Dynamic_v1.xcdatamodeld in Sources */,
 			);

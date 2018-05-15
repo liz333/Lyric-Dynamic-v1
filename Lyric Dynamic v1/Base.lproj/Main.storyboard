@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ubA-n4-9Ii">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,43 +10,270 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Song List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lyric_Dynamic_v1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SongListViewController" customModule="Lyric_Dynamic_v1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Zp-cJ-7Ps">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我爱记歌词" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNs-VE-lzC">
-                                <rect key="frame" x="112" y="45" width="152" height="36"/>
+                                <rect key="frame" x="112" y="89" width="152" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPF-Xy-Wcw">
+                                <rect key="frame" x="304" y="117" width="45" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="添加"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BuY-2x-8Mz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7Zp-cJ-7Ps" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="68H-PX-idE"/>
                             <constraint firstItem="gNs-VE-lzC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9j5-Hv-OXg"/>
+                            <constraint firstItem="7Zp-cJ-7Ps" firstAttribute="top" secondItem="BPF-Xy-Wcw" secondAttribute="bottom" constant="8" symbolic="YES" id="GYV-6U-wTn"/>
                             <constraint firstItem="gNs-VE-lzC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="JXy-l0-DnV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Zp-cJ-7Ps" secondAttribute="trailing" id="ZQM-GQ-tdY"/>
                             <constraint firstItem="7Zp-cJ-7Ps" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gS8-zB-9gZ"/>
                             <constraint firstItem="7Zp-cJ-7Ps" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="j5z-Fi-g8q"/>
+                            <constraint firstItem="BPF-Xy-Wcw" firstAttribute="leading" secondItem="gNs-VE-lzC" secondAttribute="trailing" constant="40" id="lfZ-0h-xRi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Zp-cJ-7Ps" secondAttribute="bottom" id="tv4-dV-JgX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gqM-wl-0Pu">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="5Rm-fs-OiD"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="SongListTV" destination="7Zp-cJ-7Ps" id="gu6-HA-M74"/>
+                        <outlet property="songListTV" destination="7Zp-cJ-7Ps" id="MqH-gF-1qD"/>
+                        <segue destination="iOr-4e-d1B" kind="show" identifier="addSegue" id="8Un-Ib-BVK"/>
+                        <segue destination="Uze-dJ-l2M" kind="show" identifier="viewSegue" id="ay4-hs-CDJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="976.79999999999995" y="31.934032983508249"/>
+        </scene>
+        <!--Song View Controller-->
+        <scene sceneID="fEI-Vb-vre">
+            <objects>
+                <viewController id="Uze-dJ-l2M" customClass="SongViewController" customModule="Lyric_Dynamic_v1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="epn-P0-OA0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌曲" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWy-ow-FES">
+                                <rect key="frame" x="157" y="89" width="61" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌手：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55H-XR-ORk">
+                                <rect key="frame" x="50" y="140" width="62" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作词：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sy-tA-qaA">
+                                <rect key="frame" x="213" y="140" width="62" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作曲：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-De-jeb">
+                                <rect key="frame" x="213" y="179" width="62" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" keyboardDismissMode="interactive" editable="NO" text="歌词" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2g6-lv-SIg">
+                                <rect key="frame" x="25" y="233" width="325" height="409"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="55H-XR-ORk" firstAttribute="leading" secondItem="0OQ-ob-7Kh" secondAttribute="leading" constant="50" id="3nA-If-2Am"/>
+                            <constraint firstItem="iWy-ow-FES" firstAttribute="top" secondItem="0OQ-ob-7Kh" secondAttribute="top" constant="25" id="7td-gP-wJP"/>
+                            <constraint firstItem="0OQ-ob-7Kh" firstAttribute="bottom" secondItem="2g6-lv-SIg" secondAttribute="bottom" constant="25" id="GIl-n8-vuc"/>
+                            <constraint firstItem="2g6-lv-SIg" firstAttribute="top" secondItem="hMf-De-jeb" secondAttribute="bottom" constant="30" id="H7a-YS-t0z"/>
+                            <constraint firstItem="hMf-De-jeb" firstAttribute="top" secondItem="3Sy-tA-qaA" secondAttribute="bottom" constant="15" id="JwW-sQ-e8y"/>
+                            <constraint firstItem="55H-XR-ORk" firstAttribute="top" secondItem="iWy-ow-FES" secondAttribute="bottom" constant="15" id="KAA-x5-4j5"/>
+                            <constraint firstItem="3Sy-tA-qaA" firstAttribute="top" secondItem="iWy-ow-FES" secondAttribute="bottom" constant="15" id="Srn-8g-0WO"/>
+                            <constraint firstItem="iWy-ow-FES" firstAttribute="centerX" secondItem="epn-P0-OA0" secondAttribute="centerX" id="WuD-Zo-ahi"/>
+                            <constraint firstItem="0OQ-ob-7Kh" firstAttribute="trailing" secondItem="2g6-lv-SIg" secondAttribute="trailing" constant="25" id="YKw-9G-oKw"/>
+                            <constraint firstItem="2g6-lv-SIg" firstAttribute="leading" secondItem="0OQ-ob-7Kh" secondAttribute="leading" constant="25" id="gQf-XL-npn"/>
+                            <constraint firstItem="0OQ-ob-7Kh" firstAttribute="trailing" secondItem="hMf-De-jeb" secondAttribute="trailing" constant="100" id="imd-T4-F45"/>
+                            <constraint firstItem="0OQ-ob-7Kh" firstAttribute="trailing" secondItem="3Sy-tA-qaA" secondAttribute="trailing" constant="100" id="mRb-7g-K4C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0OQ-ob-7Kh"/>
+                    </view>
+                    <connections>
+                        <outlet property="composerLabel" destination="hMf-De-jeb" id="GHv-5A-im4"/>
+                        <outlet property="lyricLabel" destination="2g6-lv-SIg" id="v91-2J-9yB"/>
+                        <outlet property="lyricistLabel" destination="3Sy-tA-qaA" id="hDB-Ox-csU"/>
+                        <outlet property="nameLabel" destination="iWy-ow-FES" id="iGg-pf-85c"/>
+                        <outlet property="singerLabel" destination="55H-XR-ORk" id="W3v-tX-b1v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9T-CR-gMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="818"/>
+        </scene>
+        <!--添加歌曲-->
+        <scene sceneID="hhn-Cb-mbP">
+            <objects>
+                <viewController id="iOr-4e-d1B" customClass="AddSongViewController" customModule="Lyric_Dynamic_v1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lsz-4k-twr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌曲：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TjJ-ns-ZXR">
+                                <rect key="frame" x="30" y="84" width="76" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌手：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmo-qo-cgA">
+                                <rect key="frame" x="30" y="134" width="76" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作词：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3m-AZ-kyt">
+                                <rect key="frame" x="30" y="184" width="76" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作曲：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obY-j4-Czm">
+                                <rect key="frame" x="30" y="234" width="76" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌词：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1c-vE-XYW">
+                                <rect key="frame" x="30" y="284" width="76" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入歌曲名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2D-F5-7Ka">
+                                <rect key="frame" x="106" y="84" width="249" height="34"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入歌手名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5p-Cd-uXb">
+                                <rect key="frame" x="106" y="133" width="249" height="34"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入作词名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pn6-MT-wyY">
+                                <rect key="frame" x="106" y="182" width="249" height="34"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入作曲名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xus-BW-sJB">
+                                <rect key="frame" x="106" y="231" width="249" height="34"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="在此输入歌词" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwC-se-1PB">
+                                <rect key="frame" x="20" y="329" width="335" height="258"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYs-E2-gfS">
+                                <rect key="frame" x="162" y="605" width="51" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="完成"/>
+                                <connections>
+                                    <action selector="doneBottonTapped:" destination="iOr-4e-d1B" eventType="touchUpInside" id="03f-zM-xMb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="a5p-Cd-uXb" firstAttribute="leading" secondItem="Fmo-qo-cgA" secondAttribute="trailing" id="20c-L2-Z22"/>
+                            <constraint firstItem="Fmo-qo-cgA" firstAttribute="leading" secondItem="j3m-AZ-kyt" secondAttribute="leading" id="4Uq-Ec-uj4"/>
+                            <constraint firstItem="vwC-se-1PB" firstAttribute="top" secondItem="x1c-vE-XYW" secondAttribute="bottom" constant="15" id="HDq-DI-o1J"/>
+                            <constraint firstItem="Fmo-qo-cgA" firstAttribute="leading" secondItem="x1c-vE-XYW" secondAttribute="leading" id="JCN-pf-j3V"/>
+                            <constraint firstItem="k2D-F5-7Ka" firstAttribute="leading" secondItem="TjJ-ns-ZXR" secondAttribute="trailing" id="JwK-Si-YAW"/>
+                            <constraint firstItem="dx2-g8-eXp" firstAttribute="trailing" secondItem="pn6-MT-wyY" secondAttribute="trailing" constant="20" id="NAt-BK-DIv"/>
+                            <constraint firstItem="uYs-E2-gfS" firstAttribute="centerX" secondItem="lsz-4k-twr" secondAttribute="centerX" id="UnX-ls-KaK"/>
+                            <constraint firstItem="dx2-g8-eXp" firstAttribute="trailing" secondItem="k2D-F5-7Ka" secondAttribute="trailing" constant="20" id="ViJ-CA-gzy"/>
+                            <constraint firstItem="vwC-se-1PB" firstAttribute="leading" secondItem="dx2-g8-eXp" secondAttribute="leading" constant="20" id="YLW-nh-Fdp"/>
+                            <constraint firstItem="pn6-MT-wyY" firstAttribute="top" secondItem="a5p-Cd-uXb" secondAttribute="bottom" constant="15" id="ZpL-PR-l0e"/>
+                            <constraint firstItem="Fmo-qo-cgA" firstAttribute="leading" secondItem="obY-j4-Czm" secondAttribute="leading" id="cgL-EY-qGb"/>
+                            <constraint firstItem="dx2-g8-eXp" firstAttribute="trailing" secondItem="a5p-Cd-uXb" secondAttribute="trailing" constant="20" id="eqX-qy-BFN"/>
+                            <constraint firstItem="dx2-g8-eXp" firstAttribute="bottom" secondItem="vwC-se-1PB" secondAttribute="bottom" constant="80" id="fTS-7J-rvI"/>
+                            <constraint firstItem="xus-BW-sJB" firstAttribute="leading" secondItem="obY-j4-Czm" secondAttribute="trailing" id="hIR-aG-19K"/>
+                            <constraint firstItem="pn6-MT-wyY" firstAttribute="leading" secondItem="j3m-AZ-kyt" secondAttribute="trailing" id="hZb-it-hwO"/>
+                            <constraint firstItem="dx2-g8-eXp" firstAttribute="bottom" secondItem="uYs-E2-gfS" secondAttribute="bottom" constant="20" id="iFe-nK-z2e"/>
+                            <constraint firstItem="Fmo-qo-cgA" firstAttribute="top" secondItem="TjJ-ns-ZXR" secondAttribute="bottom" constant="20" id="mp1-GL-K7v"/>
+                            <constraint firstItem="a5p-Cd-uXb" firstAttribute="top" secondItem="k2D-F5-7Ka" secondAttribute="bottom" constant="15" id="o7g-bE-43s"/>
+                            <constraint firstItem="TjJ-ns-ZXR" firstAttribute="leading" secondItem="dx2-g8-eXp" secondAttribute="leading" constant="30" id="oNk-Mt-7rb"/>
+                            <constraint firstItem="dx2-g8-eXp" firstAttribute="trailing" secondItem="xus-BW-sJB" secondAttribute="trailing" constant="20" id="sDT-Rc-TYc"/>
+                            <constraint firstItem="k2D-F5-7Ka" firstAttribute="top" secondItem="dx2-g8-eXp" secondAttribute="top" constant="20" id="tK2-CH-5D1"/>
+                            <constraint firstItem="j3m-AZ-kyt" firstAttribute="top" secondItem="Fmo-qo-cgA" secondAttribute="bottom" constant="20" id="u4V-Hq-HiI"/>
+                            <constraint firstItem="x1c-vE-XYW" firstAttribute="top" secondItem="obY-j4-Czm" secondAttribute="bottom" constant="20" id="uIJ-QG-yDZ"/>
+                            <constraint firstItem="TjJ-ns-ZXR" firstAttribute="top" secondItem="k2D-F5-7Ka" secondAttribute="top" id="vc8-bW-Vr7"/>
+                            <constraint firstItem="TjJ-ns-ZXR" firstAttribute="leading" secondItem="Fmo-qo-cgA" secondAttribute="leading" id="yMx-ZF-btk"/>
+                            <constraint firstItem="dx2-g8-eXp" firstAttribute="trailing" secondItem="vwC-se-1PB" secondAttribute="trailing" constant="20" id="yhZ-73-8q6"/>
+                            <constraint firstItem="obY-j4-Czm" firstAttribute="top" secondItem="j3m-AZ-kyt" secondAttribute="bottom" constant="20" id="zhM-jG-cSR"/>
+                            <constraint firstItem="xus-BW-sJB" firstAttribute="top" secondItem="pn6-MT-wyY" secondAttribute="bottom" constant="15" id="zo3-C2-hL2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dx2-g8-eXp"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加歌曲" id="n3i-E1-M67">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="api-37-wxb"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="composerText" destination="xus-BW-sJB" id="WBe-Vd-tJU"/>
+                        <outlet property="lyricText" destination="vwC-se-1PB" id="Kjl-Y5-za3"/>
+                        <outlet property="lyricistText" destination="pn6-MT-wyY" id="Lch-al-Wp3"/>
+                        <outlet property="nameText" destination="k2D-F5-7Ka" id="eLk-XI-9GB"/>
+                        <outlet property="singerText" destination="a5p-Cd-uXb" id="sa8-vi-mkc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gl0-dv-8yV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861.5999999999999" y="31.934032983508249"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2NZ-l3-5hf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ubA-n4-9Ii" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ygk-gY-afM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="onR-0Y-OjU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaH-NR-gvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="32"/>
         </scene>
     </scenes>
 </document>
