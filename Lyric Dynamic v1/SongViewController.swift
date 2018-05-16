@@ -47,6 +47,9 @@ class SongViewController: UIViewController {
     }
     
     
+    @IBAction func editTapped(_ sender: Any) {
+    }
+    
     @IBAction func deleteTapped(_ sender: Any) {
         context.delete(song)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()

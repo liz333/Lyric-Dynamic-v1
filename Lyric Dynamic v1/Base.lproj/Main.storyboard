@@ -85,19 +85,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" keyboardDismissMode="interactive" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2g6-lv-SIg">
-                                <rect key="frame" x="25" y="227" width="325" height="359"/>
+                                <rect key="frame" x="25" y="227" width="325" height="354"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qq-SQ-5Di">
-                                <rect key="frame" x="159" y="611" width="57" height="36"/>
+                                <rect key="frame" x="238" y="606" width="57" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Delete"/>
                                 <connections>
                                     <action selector="deleteTapped:" destination="Uze-dJ-l2M" eventType="touchUpInside" id="b9B-Mo-DTA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作词：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sy-tA-qaA">
+                                <rect key="frame" x="213" y="139" width="112" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作曲：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOr-hF-Ubv">
                                 <rect key="frame" x="75" y="178" width="120" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -110,17 +116,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作词：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sy-tA-qaA">
-                                <rect key="frame" x="213" y="139" width="112" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQo-ro-GkI">
+                                <rect key="frame" x="90" y="606" width="34" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editTapped:" destination="Uze-dJ-l2M" eventType="touchUpInside" id="H5o-bY-Uwb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0OQ-ob-7Kh" firstAttribute="bottom" secondItem="6Qq-SQ-5Di" secondAttribute="bottom" constant="25" id="3sS-7U-TwW"/>
+                            <constraint firstItem="lQo-ro-GkI" firstAttribute="leading" secondItem="0OQ-ob-7Kh" secondAttribute="leading" constant="90" id="4Ct-ED-dGq"/>
                             <constraint firstItem="0OQ-ob-7Kh" firstAttribute="trailing" secondItem="2g6-lv-SIg" secondAttribute="trailing" constant="25" id="8Zg-Sx-g25"/>
+                            <constraint firstItem="6Qq-SQ-5Di" firstAttribute="leading" secondItem="lQo-ro-GkI" secondAttribute="trailing" constant="114" id="HIC-NO-AbZ"/>
                             <constraint firstItem="0OQ-ob-7Kh" firstAttribute="trailing" secondItem="3Sy-tA-qaA" secondAttribute="trailing" constant="50" id="Jdo-bn-ORo"/>
+                            <constraint firstItem="6Qq-SQ-5Di" firstAttribute="top" secondItem="2g6-lv-SIg" secondAttribute="bottom" constant="25" id="KzC-p1-ug2"/>
                             <constraint firstItem="0OQ-ob-7Kh" firstAttribute="trailing" secondItem="kPx-96-o8x" secondAttribute="trailing" constant="50" id="MA3-vX-e8Z"/>
                             <constraint firstItem="55H-XR-ORk" firstAttribute="leading" secondItem="0OQ-ob-7Kh" secondAttribute="leading" constant="75" id="Naf-0H-aeD"/>
                             <constraint firstItem="ZOr-hF-Ubv" firstAttribute="top" secondItem="55H-XR-ORk" secondAttribute="bottom" constant="15" id="Own-SB-7Ve"/>
@@ -128,21 +140,19 @@
                             <constraint firstItem="2g6-lv-SIg" firstAttribute="leading" secondItem="0OQ-ob-7Kh" secondAttribute="leading" constant="25" id="UW9-B3-Zz0"/>
                             <constraint firstItem="3Sy-tA-qaA" firstAttribute="leading" secondItem="0OQ-ob-7Kh" secondAttribute="leading" constant="213" id="UWL-mx-Ct1"/>
                             <constraint firstItem="2g6-lv-SIg" firstAttribute="top" secondItem="ZOr-hF-Ubv" secondAttribute="bottom" constant="25" id="VDZ-8X-NQF"/>
-                            <constraint firstItem="6Qq-SQ-5Di" firstAttribute="top" secondItem="2g6-lv-SIg" secondAttribute="bottom" constant="25" id="Vjn-vP-94X"/>
                             <constraint firstItem="ZOr-hF-Ubv" firstAttribute="leading" secondItem="0OQ-ob-7Kh" secondAttribute="leading" constant="75" id="aHS-SW-c8J"/>
                             <constraint firstItem="0OQ-ob-7Kh" firstAttribute="trailing" secondItem="ZOr-hF-Ubv" secondAttribute="trailing" constant="180" id="aec-XY-UID"/>
                             <constraint firstItem="iWy-ow-FES" firstAttribute="top" secondItem="0OQ-ob-7Kh" secondAttribute="top" constant="25" id="b9N-AB-5FU"/>
                             <constraint firstItem="3Sy-tA-qaA" firstAttribute="top" secondItem="0OQ-ob-7Kh" secondAttribute="top" constant="75" id="cnH-vP-xls"/>
                             <constraint firstItem="kPx-96-o8x" firstAttribute="leading" secondItem="0OQ-ob-7Kh" secondAttribute="leading" constant="213" id="gW3-61-Jco"/>
                             <constraint firstItem="2g6-lv-SIg" firstAttribute="top" secondItem="kPx-96-o8x" secondAttribute="bottom" constant="25" id="gru-5t-SWR"/>
-                            <constraint firstAttribute="bottom" secondItem="6Qq-SQ-5Di" secondAttribute="bottom" constant="20" symbolic="YES" id="hNx-jC-tLH"/>
+                            <constraint firstItem="0OQ-ob-7Kh" firstAttribute="trailing" secondItem="6Qq-SQ-5Di" secondAttribute="trailing" constant="80" id="hep-P3-IIo"/>
+                            <constraint firstItem="0OQ-ob-7Kh" firstAttribute="bottom" secondItem="lQo-ro-GkI" secondAttribute="bottom" constant="25" id="iHN-qn-pPY"/>
                             <constraint firstItem="iWy-ow-FES" firstAttribute="centerX" secondItem="epn-P0-OA0" secondAttribute="centerX" id="k9D-LM-VyV"/>
-                            <constraint firstItem="2g6-lv-SIg" firstAttribute="centerX" secondItem="6Qq-SQ-5Di" secondAttribute="centerX" id="lS8-pd-9VH"/>
                             <constraint firstItem="kPx-96-o8x" firstAttribute="top" secondItem="3Sy-tA-qaA" secondAttribute="bottom" constant="15" id="o9K-8D-kN0"/>
                             <constraint firstItem="55H-XR-ORk" firstAttribute="top" secondItem="0OQ-ob-7Kh" secondAttribute="top" constant="75" id="pCC-Wa-cBJ"/>
-                            <constraint firstItem="0OQ-ob-7Kh" firstAttribute="trailing" secondItem="6Qq-SQ-5Di" secondAttribute="trailing" constant="159" id="pf1-Em-Xye"/>
+                            <constraint firstItem="lQo-ro-GkI" firstAttribute="top" secondItem="2g6-lv-SIg" secondAttribute="bottom" constant="25" id="rEA-lC-taG"/>
                             <constraint firstItem="0OQ-ob-7Kh" firstAttribute="trailing" secondItem="55H-XR-ORk" secondAttribute="trailing" constant="180" id="rjA-zd-e7i"/>
-                            <constraint firstItem="6Qq-SQ-5Di" firstAttribute="leading" secondItem="0OQ-ob-7Kh" secondAttribute="leading" constant="159" id="uFh-Vk-qRW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0OQ-ob-7Kh"/>
                     </view>
@@ -282,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gl0-dv-8yV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861.5999999999999" y="31.934032983508249"/>
+            <point key="canvasLocation" x="1838" y="32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2NZ-l3-5hf">
