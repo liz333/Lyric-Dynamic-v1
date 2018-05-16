@@ -22,6 +22,8 @@ class SongViewController: UIViewController {
     
     var song = Song()
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +35,10 @@ class SongViewController: UIViewController {
     }
     
     
-    
+    @IBAction func deleteTapped(_ sender: Any) {
+        context.delete(song)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController?.popViewController(animated: true)
+    }
     
 }

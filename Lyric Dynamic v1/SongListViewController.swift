@@ -52,7 +52,6 @@ class SongListViewController: UIViewController, UITableViewDataSource, UITableVi
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
             songs = try context.fetch(Song.fetchRequest()) as! [Song]
-            print(songs)
         } catch {
             print("Oops~")
         }
