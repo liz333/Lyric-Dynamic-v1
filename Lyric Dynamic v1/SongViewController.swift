@@ -32,4 +32,7 @@ class SongViewController: UIViewController {
         lyricistLabel.text = song.lyric
     }
     
+    
+    
+    
 }
