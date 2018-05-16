@@ -18,11 +18,20 @@ class AddSongViewController: UIViewController {
     
     @IBOutlet weak var composerText: UITextField!
     
-    @IBOutlet weak var lyricText: UITextField!
+    @IBOutlet var lyricText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.addSubview(lyricText)
+        lyricText.delegate = self as? UITextViewDelegate
+        
+        lyricText.isEditable = true
+        lyricText.layer.borderWidth = 1
+        lyricText.layer.borderColor = UIColor.gray.cgColor
+        lyricText.layer.cornerRadius = 20
+        lyricText.layer.masksToBounds = true
+        lyricText.textAlignment = NSTextAlignment.center
     }
     
     @IBAction func doneBottonTapped(_ sender: Any) {

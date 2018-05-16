@@ -16,7 +16,9 @@ class SongViewController: UIViewController {
     
     @IBOutlet weak var lyricistLabel: UILabel!
     
-    @IBOutlet weak var composerLabel: UILabel!
+    @IBOutlet var composerLabel: UILabel!
+    
+    @IBOutlet var timeLabel: UILabel!
     
     @IBOutlet weak var lyricLabel: UITextView!
     
@@ -26,12 +28,22 @@ class SongViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(lyricLabel)
+        lyricLabel.delegate = self as? UITextViewDelegate
         
         nameLabel.text = song.name
-        singerLabel.text = song.singer
-        lyricistLabel.text = song.lyricist
-        composerLabel.text = song.composer
-        lyricistLabel.text = song.lyric
+        singerLabel.text = "演唱：\(song.singer!)"
+        lyricistLabel.text = "作词：\(song.lyricist!)"
+        composerLabel.text = "作曲：\(song.composer!)"
+        timeLabel.text = "时长：\(song.time)"
+        lyricLabel.text = song.lyric
+        
+        lyricLabel.isEditable = false
+        lyricLabel.layer.borderWidth = 1
+        lyricLabel.layer.borderColor = UIColor.gray.cgColor
+        lyricLabel.layer.cornerRadius = 20
+        lyricLabel.layer.masksToBounds = true
+        lyricLabel.textAlignment = NSTextAlignment.center
     }
     
     
